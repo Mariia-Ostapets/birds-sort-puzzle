@@ -19,6 +19,42 @@
   border-radius: 16px;
   backdrop-filter: blur(8px);
   background: linear-gradient(134deg, #132278 0%, #34379f 49.52%, #2d95ef 100%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+@media screen and (max-width: 1199px) {
+  .features-item-first,
+  .features-item-third,
+  .features-item-fourth {
+    min-height: 120px;
+  }
+
+  .features-item-sixth,
+  .features-item-seventh {
+    height: 125px;
+  }
+
+  .features-item-first,
+  .features-item-third,
+  .features-item-fourth,
+  .features-item-sixth,
+  .features-item-seventh {
+    background-image: url(../img/features-bg-mob.png);
+  }
+
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .features-item-first,
+    .features-item-third,
+    .features-item-fourth,
+    .features-item-sixth,
+    .features-item-seventh {
+      background-image: url(../img/features-bg-mob@2x.png);
+    }
+  }
 }
 
 .features-section-subtitle {
@@ -88,6 +124,48 @@
   .features-item-eighth {
     grid-area: features-item-eighth;
     height: 200px;
+  }
+
+  .features-item-first,
+  .features-item-third,
+  .features-item-fourth {
+    background-image: url(../img/features-bg-sm-desc.png);
+    transition: background-image 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .features-item-sixth,
+  .features-item-seventh {
+    background-image: url(../img/features-bg-lg-desc.png);
+    transition: background-image 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .features-item-first,
+    .features-item-third,
+    .features-item-fourth {
+      background-image: url(../img/features-bg-sm-desc@2x.png);
+    }
+    .features-item-sixth,
+    .features-item-seventh {
+      background-image: url(../img/features-bg-lg-desc@2x.png);
+    }
+    .features-item-first:hover,
+    .features-item-third:hover,
+    .features-item-fourth:hover,
+    .features-item-sixth:hover,
+    .features-item-seventh:hover {
+      background-image: url(../img/features-bg-hover@2x.png);
+    }
+  }
+
+  .features-item-first:hover,
+  .features-item-third:hover,
+  .features-item-fourth:hover,
+  .features-item-sixth:hover,
+  .features-item-seventh:hover {
+    background-image: url(../img/features-bg-hover.png);
   }
 
   .features-section-subtitle {
