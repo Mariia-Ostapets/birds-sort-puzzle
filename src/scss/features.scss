@@ -27,6 +27,7 @@
 
 @media screen and (min-width: 1200px) {
   .features-list {
+    position: relative;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(5, 224px 200px 200px 200px 228px);
@@ -60,21 +61,28 @@
   .features-item-fourth {
     grid-area: features-item-fourth;
     height: 228px;
+    padding: 32px;
   }
 
   .features-item-fifth {
     grid-area: features-item-fifth;
     height: 506px;
+    position: absolute;
+    top: 72px;
   }
 
   .features-item-sixth {
     grid-area: features-item-sixth;
     height: 296px;
+    padding: 85px 32px;
   }
 
   .features-item-seventh {
     grid-area: features-item-seventh;
     height: 296px;
+    position: absolute;
+    bottom: 0;
+    padding: 85px 32px;
   }
 
   .features-item-eighth {
