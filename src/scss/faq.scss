@@ -1,6 +1,131 @@
+.faq-section {
+  background: radial-gradient(
+    148.08% 141.42% at 0% 0%,
+    rgb(12, 23, 72) 0%,
+    rgb(14, 29, 116) 31.999999284744263%,
+    rgb(19, 17, 95) 73.00000190734863%,
+    rgb(21, 51, 157) 100%
+  );
+}
+
 .faq-title-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   margin-bottom: 16px;
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.faq-item.ac {
+  padding: 16px;
+  border-radius: 16px;
+  background: #0c174c;
+  border: none;
+  margin: 0;
+}
+
+@media screen and (max-width: 1199px) {
+  .faq-item.ac:nth-child(6n-10) {
+    padding: 29px 16px;
+  }
+}
+
+.section-subtitle.ac-header .faq-item-btn.ac-trigger {
+  font-family: inherit;
+  background-color: inherit;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: inherit;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+}
+
+.section-subtitle.ac-header .faq-item-btn.ac-trigger::after,
+.ac.is-active > .ac-header .faq-item-btn.ac-trigger::after {
+  content: none;
+}
+
+.faq-item-btn-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.faq-item-btn-svg {
+  width: 24px;
+  height: 24px;
+}
+
+.icon-arrow-down,
+.icon-arrow-up {
+  fill: transparent;
+  stroke: #ffffff;
+  width: 24px;
+  height: 24px;
+}
+
+.faq-item.ac .icon-arrow-up,
+.faq-item.ac.is-active .icon-arrow-down {
+  display: none;
+}
+
+.faq-item.ac .icon-arrow-down,
+.faq-item.ac.is-active .icon-arrow-up {
+  display: inline-block;
+}
+
+.faq-item-text-container.ac-panel .faq-item-text.ac-text {
+  font-family: 'Inter Tight', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  padding: 8px 0 0 0;
+}
+
+@media screen and (min-width: 1200px) {
+  .faq-title-wrapper {
+    margin-bottom: 32px;
+  }
+
+  .faq-list {
+    gap: 24px;
+  }
+
+  .faq-item.ac {
+    padding: 32px;
+  }
+
+  .section-subtitle.ac-header .faq-item-btn.ac-trigger {
+    font-size: 32px;
+    line-height: 1;
+  }
+
+  .faq-item-btn-svg {
+    width: 36px;
+    height: 36px;
+  }
+
+  .icon-arrow-down,
+  .icon-arrow-up {
+    width: 36px;
+    height: 36px;
+  }
+
+  .faq-item-text-container.ac-panel .faq-item-text.ac-text {
+    font-size: 24px;
+    line-height: 1.5;
+    padding-top: 24px;
+  }
 }
