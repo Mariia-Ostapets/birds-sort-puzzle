@@ -23,6 +23,13 @@
 
 .header {
   padding: 64px 0;
+  position: fixed;
+  height: 82px;
+  z-index: 60;
+  top: 0;
+  left: 0px;
+  width: 100%;
+  margin-bottom: 60px;
 }
 .header_container {
   width: 100%;
@@ -70,7 +77,6 @@
 @media screen and (min-width: 1280px) {
   .header_nav {
     align-items: center;
-    // justify-content: flex-end;
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -79,20 +85,23 @@
 
 .header_nav_list {
   display: none;
+  width: 82px;
+  padding-left: 32px;
+  padding-right: 40px;
 }
 
 @media screen and (min-width: 1280px) {
   .header_nav_list {
     display: flex;
     align-items: center;
-    // justify-content: center;
+    font-weight: 600;
     gap: 65.4px;
     font-size: 18px;
     line-height: 18px;
     letter-spacing: -2%;
     background-color: rgba(12, 23, 76, 0.7);
     width: auto;
-    // height: 82px;
+    height: 82px;
     border-radius: 16px;
   }
 }
