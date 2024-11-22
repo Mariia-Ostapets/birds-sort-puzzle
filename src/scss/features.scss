@@ -1,0 +1,40 @@
+.features-section {
+  background: radial-gradient(
+    148.08% 141.42% at 0% 0%,
+    rgb(18, 35, 118) 0%,
+    rgb(27, 51, 189) 31.999999284744263%,
+    rgb(38, 34, 164) 73.00000190734863%,
+    rgb(100, 127, 224) 100%
+  );
+}
+
+.section-title {
+  margin-bottom: 16px;
+}
+
+.features-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.features-item {
+  padding: 16px;
+  border-radius: 16px;
+  backdrop-filter: blur(8px);
+  background: linear-gradient(134deg, #132278 0%, #34379f 49.52%, #2d95ef 100%);
+}
+
+.features-item-title {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.features-item-text {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
