@@ -1,23 +1,25 @@
 <header class="header">
   <div class="container header-container">
     <nav class="header_nav">
-      <a href="./index.html" class="header-img-box">
-        <picture>
-          <img
-            class="header-image"
-            srcset="
-              ../img/header/logo_header1x.png 1x,
-              ../img/header/logo_header2x.png 2x
-            "
-            alt="logo"
-            width="80"
-            height="80"
-            loading="lazy"
-            title="logo"
-          />
-        </picture>
-      </a>
-      <ul class="header_nav_list">
+      <div class="header_logo">
+        <a href="./index.html" class="header-img-box">
+          <picture>
+            <img
+              class="header-image"
+              srcset="
+                ../img/header/logo_header1x.png 1x,
+                ../img/header/logo_header2x.png 2x
+              "
+              alt="logo"
+              width="64"
+              height="64"
+              loading="lazy"
+              title="logo"
+            />
+          </picture>
+        </a>
+      </div>
+      <ul class="header_nav_list header-menu-list">
         <li>
           <a href="#home" class="header_nav_link">Home</a>
         </li>
@@ -37,7 +39,7 @@
           <a href="#how_to_play" class="header_nav_link">How to Play</a>
         </li>
       </ul>
-      <div class="header-burger-btn-box">
+      <div class="header-burger-btn-box header-burger-btn">
         <button
           class="header-burger-btn"
           type="button"
@@ -53,11 +55,11 @@
 
   <!-- mobile -->
 
-  <!-- <div class="header-burger-backdrop">
+  <div class="header-burger-backdrop">
     <div class="header-burger-menu">
       <button class="header-close-btn" type="button" aria-label="Close button">
         <svg class="header-close-icon" width="24" height="24">
-          <use href="./img/icons.svg#icon-x"></use>
+          <use href="../img/sprite.svg#icon-Close-Menu"></use>
         </svg>
       </button>
       <ul class="header-burger-menu-list">
@@ -80,5 +82,5 @@
           <a href="#faq" class="header-burger-list-item-link">How to play</a>
         </li>
       </ul>
-  </div> -->
+  </div> 
 </header>
