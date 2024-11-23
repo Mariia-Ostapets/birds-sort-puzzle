@@ -147,25 +147,33 @@
     .features-item-fourth {
       background-image: url(../img/features-bg-sm-desc@2x.png);
     }
+
     .features-item-sixth,
     .features-item-seventh {
       background-image: url(../img/features-bg-lg-desc@2x.png);
     }
+
     .features-item-first:hover,
     .features-item-third:hover,
-    .features-item-fourth:hover,
+    .features-item-fourth:hover {
+      background-image: url(../img/features-bg-sm-hover@2x.png);
+    }
+
     .features-item-sixth:hover,
     .features-item-seventh:hover {
-      background-image: url(../img/features-bg-hover@2x.png);
+      background-image: url(../img/features-bg-lg-hover@2x.png);
     }
   }
 
   .features-item-first:hover,
   .features-item-third:hover,
-  .features-item-fourth:hover,
+  .features-item-fourth:hover {
+    background-image: url(../img/features-bg-sm-hover.png);
+  }
+
   .features-item-sixth:hover,
   .features-item-seventh:hover {
-    background-image: url(../img/features-bg-hover.png);
+    background-image: url(../img/features-bg-lg-hover.png);
   }
 
   .features-section-subtitle {
