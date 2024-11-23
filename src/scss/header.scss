@@ -139,6 +139,7 @@
 
 .header-burger-backdrop {
   position: relative;
+
   overflow: hidden;
   background-color: rgba(0, 0, 0, 0.7);
   // backdrop-filter: opacity(20%);
@@ -166,7 +167,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-color: rgba(12, 23, 76, 1);
-  // border-radius: 16px;
+  border-radius: 16px 0 0 16px;
 }
 
 .header-burger-menu.is-open-header {
