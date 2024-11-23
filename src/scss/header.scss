@@ -1,6 +1,6 @@
 .header {
   padding: 64px 0;
-  position: fixed;
+  // position: fixed;
   height: 82px;
   z-index: 60;
   top: 0;
@@ -36,7 +36,7 @@
 .header-image {
   transition: transform 0.3s ease;
 }
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1200px) {
   .header-image {
     width: 84px;
     height: 84px;
@@ -51,7 +51,7 @@
   gap: 24px;
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1200px) {
   .header_nav {
     align-items: center;
     display: flex;
@@ -67,7 +67,7 @@
   padding-right: 40px;
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1200px) {
   .header_nav_list {
     display: flex;
     align-items: center;
@@ -132,7 +132,7 @@
   animation-name: slide in;
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1200px) {
   .header-burger-btn {
     display: none;
   }
