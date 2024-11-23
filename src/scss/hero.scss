@@ -6,11 +6,21 @@
   display: block;
   //   align-items: center;
   //   margin: 0 auto;
-  background-image: (url(../img/hero/hero@1x.jpg));
+  background-image: (url(../img/hero/hero_mob@1x.jpg));
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  padding-top: 185px;
   //   text-align: center;
+}
+@media screen and (min-width: 1280px) {
+  .hero-container {
+    background-image: (url(../img/hero/hero_desk@1x.jpg));
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding-top: 313px;
+  }
 }
 
 .hero-title {
@@ -23,6 +33,15 @@
   text-transform: uppercase;
   width: 288px;
   text-align: left;
+  padding-left: 16px;
+}
+@media screen and (min-width: 1280px) {
+  .hero-title {
+    padding-left: 90px;
+    font-size: 96px;
+    line-height: 96px;
+    width: auto;
+  }
 }
 .hero-text {
   font-family: Inter Tight;
@@ -35,8 +54,20 @@
   text-decoration-skip-ink: none;
   width: 288px;
   padding-bottom: 89px;
+  padding-left: 16px;
 }
 
+@media screen and (min-width: 1280px) {
+  .hero-text {
+    font-size: 32px;
+    line-height: 32px;
+  }
+}
+
+.hero-thumb {
+  display: flex;
+  flex-direction: column;
+}
 // .game-link {
 //     position: relative;
 //     display: flex
