@@ -1,0 +1,126 @@
+@import './general.scss';
+@import './footer.scss';
+
+.privacy-policy-container {
+  background: radial-gradient(
+    148.08% 141.42% at 0% 0%,
+    #0c1748 0%,
+    #0e1d74 32%,
+    #13115f 73%,
+    #15339d 100%
+  );
+  color: #ffffff;
+  font-family: 'Inter Tight', sans-serif;
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
+.privacy-policy-link {
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: inherit;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.privacy-policy-icon {
+  width: 36px;
+  height: 36px;
+}
+
+.privacy-policy-title-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+  margin-top: 32px;
+}
+
+.privacy-policy-main-title {
+  font-size: 48px;
+}
+
+.privacy-policy-text {
+  font-size: 14px;
+  margin-bottom: 32px;
+}
+
+.privacy-policy-title {
+  margin-bottom: 8px;
+}
+
+.privacy-policy-two-text {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.privacy-policy-list {
+  list-style-type: disc;
+}
+
+.privacy-policy-item {
+  margin-left: 24px;
+}
+
+.privacy-policy-item-link {
+  text-decoration: underline;
+}
+
+.privacy-policy-text-last {
+  font-size: 14px;
+}
+
+@media screen and (min-width: 1200px) {
+  .privacy-policy-container {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
+  .privacy-policy-link {
+    font-weight: 500;
+    line-height: 1.3;
+    justify-content: flex-start;
+    gap: 24px;
+  }
+
+  .privacy-policy-title-wrapper {
+    margin-bottom: 24px;
+  }
+
+  .privacy-policy-main-title {
+    font-size: 96px;
+  }
+
+  .privacy-policy-text {
+    font-size: 20px;
+    line-height: 1.3;
+    margin-bottom: 48px;
+  }
+
+  .privacy-policy-title {
+    margin-bottom: 24px;
+  }
+
+  .privacy-policy-two-text {
+    font-size: 20px;
+    line-height: 1.3;
+    margin-bottom: 24px;
+  }
+
+  .privacy-policy-item {
+    margin-left: 24px;
+  }
+
+  .privacy-policy-item-link {
+    text-decoration: underline;
+  }
+
+  .privacy-policy-text-last {
+    font-size: 20px;
+    line-height: 1.3;
+  }
+}

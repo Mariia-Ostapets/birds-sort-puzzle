@@ -8,6 +8,10 @@
   );
 }
 
+.features-section-title {
+  margin-bottom: 16px;
+}
+
 .features-list {
   display: flex;
   flex-direction: column;
@@ -62,6 +66,10 @@
 }
 
 @media screen and (min-width: 1200px) {
+  .features-section-title {
+    margin-bottom: 32px;
+  }
+
   .features-list {
     position: relative;
     display: grid;
