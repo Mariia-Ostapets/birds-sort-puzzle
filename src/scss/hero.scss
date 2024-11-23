@@ -4,14 +4,11 @@
 
 .hero-container {
   display: block;
-  //   align-items: center;
-  //   margin: 0 auto;
   background-image: (url(../img/hero/hero_mob@1x.jpg));
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   padding-top: 185px;
-  //   text-align: center;
 }
 @media screen and (min-width: 1280px) {
   .hero-container {
@@ -41,6 +38,7 @@
     font-size: 96px;
     line-height: 96px;
     width: auto;
+    margin-bottom: 167px;
   }
 }
 .hero-text {
@@ -61,12 +59,30 @@
   .hero-text {
     font-size: 32px;
     line-height: 32px;
+    padding: 0;
+    padding-left: 24px;
+    width: 488px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .hero-text {
+    font-size: 32px;
+    line-height: 32px;
+    justify-content: center;
+    margin: 0 auto;
   }
 }
 
 .hero-thumb {
   display: flex;
   flex-direction: column;
+  align-items: center;
+}
+@media screen and (min-width: 1280px) {
+  .hero-thumb {
+    padding-bottom: 64px;
+  }
 }
 
 .google-play-btn {
@@ -81,6 +97,12 @@
   width: 288px;
   margin-bottom: 32px;
   cursor: pointer;
+}
+
+@media screen and (min-width: 1280px) {
+  .google-play-btn {
+    width: 498px;
+  }
 }
 
 .google-play-btn:hover,
@@ -98,6 +120,7 @@
 .google-play-content {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
 }
 
@@ -121,22 +144,27 @@
 }
 
 .main-text-btn {
-  font-family: Roboto;
-  font-size: 9px;
-  font-weight: 400;
-  line-height: 10.55px;
-  letter-spacing: -0.03em;
+  font-family: Inter Tight;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 11px;
+  letter-spacing: -0.02em;
   text-align: left;
   text-underline-position: from-font;
   text-decoration-skip-ink: none;
   color: rgba(255, 255, 255, 1);
-  line-height: 11px;
   text-transform: uppercase;
 }
 
 .google-text {
-  font-size: 16px;
-  font-weight: bold;
-  white-space: nowrap;
+  font-family: Inter Tight;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 22px;
+  letter-spacing: -0.02em;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
   color: rgba(255, 255, 255, 1);
+  white-space: nowrap;
 }
