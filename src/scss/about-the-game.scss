@@ -1,0 +1,94 @@
+.about-the-game-thumb {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 32px;
+  padding-top: 32px;
+}
+
+@media screen and (min-width: 1200px) {
+  .about-the-game-thumb {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+}
+
+.about-the-game-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+@media screen and (min-width: 1200px) {
+  .about-the-game-header {
+    padding-bottom: 32px;
+  }
+}
+.about-the-game-title {
+  font-family: Luckiest Guy;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 32px;
+  letter-spacing: -0.02em;
+  width: 224px;
+  text-align: left;
+  margin-bottom: 16px;
+}
+
+@media screen and (min-width: 1200px) {
+  .about-the-game-title {
+    width: 488px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .about-the-game-title {
+    font-size: 64px;
+    line-height: 64px;
+  }
+}
+
+.about-the-game-image {
+  width: 64px;
+  height: 64px;
+}
+
+@media screen and (min-width: 1200px) {
+  .about-the-game-image {
+    width: 84px;
+    height: 84px;
+  }
+}
+
+.about-the-game-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+}
+
+@media screen and (min-width: 1200px) {
+  .about-the-game-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+  }
+}
+
+.about-the-game-list li {
+  list-style: none;
+}
+
+.about-the-game-picture {
+  width: 288px;
+  height: 132px;
+}
+
+@media screen and (min-width: 1200px) {
+  .about-the-game-picture {
+    width: 498px;
+    height: 192px;
+  }
+}
