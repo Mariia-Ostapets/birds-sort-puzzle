@@ -29,7 +29,12 @@
   }
 }
 .gallery-move {
-  padding-top: 30px;
+  padding-top: 32px;
+}
+@media screen and (min-width: 1200px) {
+  .gallery-move {
+    padding-top: 88px;
+  }
 }
 
 @media screen and (min-width: 1200px) {
