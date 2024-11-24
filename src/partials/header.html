@@ -7,8 +7,8 @@
             <img
               class="header-image"
               srcset="
-                ../img/header/logo_header1x.png 1x,
-                ../img/header/logo_header2x.png 2x
+                ./img/header/logo_header1x.png 1x,
+                ./img/header/logo_header2x.png 2x
               "
               alt="logo"
               width="64"
@@ -46,7 +46,7 @@
           aria-label="Mobile menu button"
         >
           <svg class="header-burger-icon" width="24" height="24">
-            <use href="../img/sprite.svg#icon-Burger-Menu"></use>
+            <use href="./img/sprite.svg#icon-Burger-Menu"></use>
           </svg>
         </button>
       </div>
@@ -55,7 +55,7 @@
 
   <!-- mobile -->
 
-  <div class="header-burger-backdrop">
+  <div class="header-burger-backdrop" id="burger-backdrop">
     <div class="header-burger-menu">
       <div thumb_header>
         <button
@@ -64,29 +64,33 @@
           aria-label="Close button"
         >
           <svg class="header-close-icon" width="24" height="24">
-            <use href="../img/sprite.svg#icon-Close-Menu"></use>
+            <use href="./img/sprite.svg#icon-Close-Menu"></use>
           </svg>
         </button>
         <ul class="header-burger-menu-list">
           <li class="header-burger-menu-list-item">
-            <a href="#about-me" class="header-burger-list-item-link">Home</a>
+            <a href="#home" class="header-burger-list-item-link">Home</a>
           </li>
           <li class="header-menu-list-item">
-            <a href="#benefits" class="header-burger-list-item-link">Gallery</a>
+            <a href="#gallery" class="header-burger-list-item-link">Gallery</a>
           </li>
           <li class="header-menu-list-item">
-            <a href="#projects" class="header-burger-list-item-link"
+            <a href="#about_the_game" class="header-burger-list-item-link"
               >About the Game</a
             >
           </li>
           <li class="header-menu-list-item">
-            <a href="#faq" class="header-burger-list-item-link">Features</a>
+            <a href="#features" class="header-burger-list-item-link"
+              >Features</a
+            >
           </li>
           <li class="header-menu-list-item">
             <a href="#faq" class="header-burger-list-item-link">FAQ</a>
           </li>
           <li class="header-menu-list-item">
-            <a href="#faq" class="header-burger-list-item-link">How to Play</a>
+            <a href="#how_to_play" class="header-burger-list-item-link"
+              >How to Play</a
+            >
           </li>
         </ul>
       </div>

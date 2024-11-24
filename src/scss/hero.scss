@@ -1,7 +1,3 @@
-.hero-section {
-  padding-top: 89px;
-}
-
 .hero-container {
   display: block;
   background-image: (url(../img/hero/hero_mob@1x.jpg));
@@ -10,13 +6,12 @@
   background-size: cover;
   padding-top: 185px;
 }
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1200px) {
   .hero-container {
     background-image: (url(../img/hero/hero_desk@1x.jpg));
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    padding-top: 313px;
   }
 }
 
@@ -31,8 +26,9 @@
   width: 288px;
   text-align: left;
   padding-left: 16px;
+  padding-top: 313px;
 }
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1200px) {
   .hero-title {
     padding-left: 90px;
     font-size: 96px;
@@ -55,7 +51,7 @@
   padding-left: 16px;
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1200px) {
   .hero-text {
     font-size: 32px;
     line-height: 32px;
@@ -65,7 +61,7 @@
   }
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1200px) {
   .hero-text {
     font-size: 32px;
     line-height: 32px;
@@ -79,7 +75,7 @@
   flex-direction: column;
   align-items: center;
 }
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1200px) {
   .hero-thumb {
     padding-bottom: 64px;
   }
@@ -99,7 +95,7 @@
   cursor: pointer;
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1200px) {
   .google-play-btn {
     width: 498px;
   }
@@ -135,7 +131,7 @@
   line-height: 1.2;
   text-align: left;
 }
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1200px) {
   .hero-thumb {
     flex-direction: row-reverse;
     flex-wrap: nowrap;
