@@ -81,6 +81,8 @@
     border-radius: 16px;
   }
 }
+
+// ----- animation -----
 .header_nav_link {
   color: rgba(246, 248, 250, 1);
   transition: color 250ms ease-in-out;
@@ -108,6 +110,7 @@
   transition: transform 0.25s;
   transform-origin: right;
 }
+//------------------------------------
 
 .header-burger-btn-box {
   display: flex;
@@ -212,4 +215,34 @@
   line-height: 1.19;
   letter-spacing: -0.02em;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+// animation for mobile menu---
+
+.header-burger-animation {
+  color: rgba(246, 248, 250, 1);
+  transition: color 250ms ease-in-out;
+  position: relative;
+}
+
+.header-burger-animation:hover {
+  color: rgba(255, 255, 255, 1);
+}
+
+.header-burger-animation:hover:before {
+  transform: scaleX(1);
+  transition: transform 0.25s;
+  transform-origin: left;
+}
+.header-burger-animation:before {
+  content: '';
+  width: 100%;
+  height: 1px;
+  background-color: rgba(246, 248, 250, 1);
+  position: absolute;
+  left: 0;
+  bottom: -0.5px;
+  transform: scaleX(0);
+  transition: transform 0.25s;
+  transform-origin: right;
 }
