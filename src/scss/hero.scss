@@ -177,6 +177,11 @@
   white-space: nowrap;
 }
 
+// ----animation----
+.hero-anim-container {
+  position: relative;
+  opacity: 0;
+}
 /* Заголовок: з правого краю до центру */
 @keyframes slide-in-left {
   from {
@@ -201,12 +206,11 @@
   }
 }
 
-// -------анімація----------
-
 /* Стилі для початкового стану */
 .hero-title,
 .hero-text,
 .google-play-content {
+  transition: transform 1s ease-in-out, opacity 1s ease-in-out;
   opacity: 0;
   transform: translateX(100%); /* Для hero-title і google-play */
 }
