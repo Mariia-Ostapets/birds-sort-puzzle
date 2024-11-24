@@ -6,12 +6,24 @@
   background-size: cover;
   padding-top: 185px;
 }
+@media only screen and (min-resolution: 192dpi),
+  only screen and (min-resolution: 2dppx) {
+  .hero-container {
+    background-image: url(../img/hero/hero_mob@2x.jpg);
+  }
+}
 @media screen and (min-width: 1200px) {
   .hero-container {
     background-image: (url(../img/hero/hero_desk@1x.jpg));
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+  }
+}
+@media screen and (min-width: 1200px) and (min-resolution: 192dpi),
+  screen and (min-width: 1200px) and (min-resolution: 2dppx) {
+  .hero-container {
+    background-image: url(../img/hero/hero_desk@2x.jpg);
   }
 }
 
@@ -163,4 +175,47 @@
   text-decoration-skip-ink: none;
   color: rgba(255, 255, 255, 1);
   white-space: nowrap;
+}
+
+/* Заголовок: з правого краю до центру */
+@keyframes slide-in-left {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Текст: зліва до центру */
+@keyframes slide-in-right {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+// -------анімація----------
+
+/* Стилі для початкового стану */
+.hero-title,
+.hero-text,
+.google-play-content {
+  opacity: 0;
+  transform: translateX(100%); /* Для hero-title і google-play */
+}
+
+/* Клас, що додається при активації */
+.animate-left {
+  animation: slide-in-left 1s ease-out forwards;
+}
+
+.animate-right {
+  animation: slide-in-right 1s ease-out forwards;
 }
