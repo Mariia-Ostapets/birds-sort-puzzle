@@ -141,19 +141,20 @@
 }
 
 .header-burger-backdrop {
-  position: relative;
-  // position: absolute;
-  // backdrop-filter: blur(10px);
-  overflow: hidden;
-  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-
-  // width: 100vw;
-  // height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  opacity: 0;
   z-index: 997;
+  display: none;
+  transition: opacity 0.3s ease;
+}
+
+.header-burger-backdrop.is-visible {
+  opacity: 1;
 }
 
 .header-burger-menu {
