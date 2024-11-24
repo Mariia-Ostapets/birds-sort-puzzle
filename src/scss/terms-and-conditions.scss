@@ -1,0 +1,9 @@
+@import './general.scss';
+@import './footer.scss';
+@import './privacy-policy.scss';
+
+@media screen and (max-width: 1199px) {
+  .privacy-policy-logo {
+    display: none;
+  }
+}
