@@ -37,9 +37,7 @@
     gap: 24px;
   }
 }
-.gallery-move {
-  padding-top: 32px;
-}
+
 @media screen and (min-width: 1200px) {
   .gallery-move {
     padding-top: 88px;
@@ -54,34 +52,97 @@
 }
 // ------animation--------//
 
+// /* Контейнер галереї */
+// .image-container {
+//   position: relative;
+//   overflow: hidden; /* Приховуємо елементи до анімації */
+// }
+
+// .gallery-list li {
+//   position: relative;
+//   opacity: 0; /* Початково приховані елементи */
+// }
+
+// /* Анімація для елементів, що виїжджають зверху */
+// .slide-in-top {
+//   animation: slideInTop 1s ease-out forwards; /* Анімація зверху */
+// }
+
+// /* Анімація для елемента, що виїжджає знизу */
+// .slide-in-bottom {
+//   animation: slideInBottom 1s ease-out forwards; /* Анімація знизу */
+// }
+
+// /* Анімація для виїзду зверху */
+// @keyframes slideInTop {
+//   0% {
+//     transform: translateY(
+//       -100%
+//     ); /* Початкова позиція за межами екрану зверху */
+//     opacity: 0;
+//   }
+//   100% {
+//     transform: translateY(0); /* Кінцева позиція у видимій зоні */
+//     opacity: 1;
+//   }
+// }
+
+// /* Анімація для виїзду знизу */
+// @keyframes slideInBottom {
+//   0% {
+//     transform: translateY(100%); /* Початкова позиція за межами екрану знизу */
+//     opacity: 0;
+//   }
+//   100% {
+//     transform: translateY(0); /* Кінцева позиція у видимій зоні */
+//     opacity: 1;
+//     padding-top: 30px; /* Додаємо зсув після завершення анімації */
+//   }
+// }
+
+// /* Затримка для кожного елемента */
+// .gallery-list li:nth-child(1) {
+//   animation-delay: 0.2s; /* Затримка для першого елемента */
+// }
+
+// .gallery-list li:nth-child(2) {
+//   animation-delay: 0.4s; /* Затримка для другого елемента */
+// }
+
+// .gallery-list li:nth-child(3) {
+//   animation-delay: 0.6s; /* Затримка для третього елемента */
+// }
+
+// 2 вар
 /* Контейнер галереї */
 .image-container {
   position: relative;
   overflow: hidden; /* Приховуємо елементи до анімації */
 }
 
-// .gallery-list {
-//   display: flex; /* Відображає елементи у рядку */
-//   gap: 20px; /* Відступи між елементами */
-//   justify-content: center; /* Вирівнюємо по центру */
-//   list-style: none; /* Прибираємо маркери списку */
-//   padding: 0;
-//   margin: 0;
-// }
-
+/* Базові стилі для елементів */
 .gallery-list li {
   position: relative;
   opacity: 0; /* Початково приховані елементи */
+  transform: translateY(50px); /* Початкове зміщення вниз */
+  transition: opacity 0.6s ease, transform 0.6s ease; /* Плавний перехід */
+}
+
+/* Клас animate активує анімацію */
+.animate {
+  opacity: 1; /* Робить елемент видимим */
+  transform: translateY(0); /* Повертає елемент у нормальну позицію */
+  transition: opacity 0.6s ease, transform 0.6s ease; /* Плавний перехід */
 }
 
 /* Анімація для елементів, що виїжджають зверху */
-.slide-in-top {
-  animation: slideInTop 1s ease-out forwards; /* Анімація зверху */
+.slide-in-top.animate {
+  animation: slideInTop 0.8s ease-out forwards; /* Анімація зверху */
 }
 
 /* Анімація для елемента, що виїжджає знизу */
-.slide-in-bottom {
-  animation: slideInBottom 1s ease-out forwards; /* Анімація знизу */
+.slide-in-bottom.animate {
+  animation: slideInBottom 0.8s ease-out forwards; /* Анімація знизу */
 }
 
 /* Анімація для виїзду зверху */
@@ -107,19 +168,22 @@
   100% {
     transform: translateY(0); /* Кінцева позиція у видимій зоні */
     opacity: 1;
-    padding-top: 30px; /* Додаємо зсув після завершення анімації */
+    padding-top: 32px;
   }
 }
 
-/* Затримка для кожного елемента */
-.gallery-list li:nth-child(1) {
-  animation-delay: 0.2s; /* Затримка для першого елемента */
-}
-
-.gallery-list li:nth-child(2) {
-  animation-delay: 0.4s; /* Затримка для другого елемента */
-}
-
-.gallery-list li:nth-child(3) {
-  animation-delay: 0.6s; /* Затримка для третього елемента */
+@media screen and (min-width: 1200px) {
+  @keyframes slideInBottom {
+    0% {
+      transform: translateY(
+        100%
+      ); /* Початкова позиція за межами екрану знизу */
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0); /* Кінцева позиція у видимій зоні */
+      opacity: 1;
+      padding-top: 88px;
+    }
+  }
 }
