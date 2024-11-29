@@ -60,6 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
     backdrop.classList.remove('is-visible');
     setTimeout(() => {
       backdrop.style.display = 'none';
+      document.body.style.overflow = '';
     }, 300);
   }
 });
