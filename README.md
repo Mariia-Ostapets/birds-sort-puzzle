@@ -21,5 +21,6 @@ Landing page for the **"Birds Sort Puzzle"** game.
 
 ### 👥 Team
 
-👩‍💻 Mariia Ostapets — Team lead, Frontend Developer 👨‍💻 Olha Svichkar — Frontend
-Developer
+👩‍💻 Mariia Ostapets — Team lead, Frontend Developer
+
+👨‍💻 Olha Svichkar — Frontend Developer
