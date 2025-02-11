@@ -1,305 +1,66 @@
-const MENU_LIST = document.querySelector('.header-menu-list');
-const BURGER_BTN = document.querySelector('.header-burger-btn');
-const BURGER_MENU = document.querySelector('.header-burger-menu');
-const CLOSE_BTN = document.querySelector('.header-close-btn');
-const BURGER_MENU_LIST = document.querySelector('.header-burger-menu-list');
+// document.addEventListener('DOMContentLoaded', () => {
+//   const burgerBtn = document.querySelector('.header-burger-btn');
+//   const closeBtn = document.querySelector('.header-close-btn');
+//   const backdrop = document.querySelector('.header-burger-backdrop');
+//   const menu = document.querySelector('.header-burger-menu');
 
-const backdrop = document.getElementById('burger-backdrop');
+//   burgerBtn.addEventListener('click', () => {
+//     backdrop.style.display = 'block';
+//     setTimeout(() => {
+//       backdrop.classList.add('is-visible');
+//       menu.classList.add('is-open-header');
+//     }, 10);
+//   });
 
-BURGER_BTN.addEventListener('click', handleBurgerClick);
-CLOSE_BTN.addEventListener('click', handleCloseClick);
-MENU_LIST.addEventListener('click', handleMenuClick);
-BURGER_MENU_LIST.addEventListener('click', handleCloseClick);
+//   closeBtn.addEventListener('click', () => {
+//     menu.classList.remove('is-open-header');
+//     backdrop.classList.remove('is-visible');
+//     setTimeout(() => {
+//       backdrop.style.display = 'none';
+//     }, 300);
+//   });
+// });
 
-document.body.addEventListener('click', event => {
-  if (
-    !MENU_LIST.classList.contains('visually-hidden') &&
-    !event.target.classList.contains('header-menu-link')
-  ) {
-    handleMenuClick();
+document.addEventListener('DOMContentLoaded', () => {
+  const burgerBtn = document.querySelector('.header-burger-btn');
+  const closeBtn = document.querySelector('.header-close-btn');
+  const backdrop = document.querySelector('.header-burger-backdrop');
+  const menu = document.querySelector('.header-burger-menu');
+  const menuLinks = document.querySelectorAll('.header-burger-list-item-link'); // Усі посилання в меню
+
+  // Відкрити меню
+  burgerBtn.addEventListener('click', () => {
+    document.body.style.overflow = 'hidden'; // Заборонити скрол сторінки
+    backdrop.style.display = 'block';
+    setTimeout(() => {
+      backdrop.classList.add('is-visible');
+      menu.classList.add('is-open-header');
+    }, 10);
+  });
+
+  // Закрити меню
+  closeBtn.addEventListener('click', closeMenu);
+
+  // Закриття при кліку на посилання
+  menuLinks.forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+
+  // Закриття при кліку на бекдроп
+  backdrop.addEventListener('click', event => {
+    if (event.target === backdrop) {
+      // Перевіряємо, що клік саме на бекдропі
+      closeMenu();
+    }
+  });
+
+  // Функція закриття меню
+  function closeMenu() {
+    menu.classList.remove('is-open-header');
+    backdrop.classList.remove('is-visible');
+    setTimeout(() => {
+      backdrop.style.display = 'none';
+      document.body.style.overflow = '';
+    }, 300);
   }
 });
-
-document.addEventListener('keydown', event => {
-  if (
-    event.key === 'Escape' &&
-    !MENU_LIST.classList.contains('visually-hidden')
-  ) {
-    handleMenuClick();
-  }
-});
-
-const DROP_DOWN_KEYFRAMES = new KeyframeEffect(
-  MENU_LIST,
-  [
-    { opacity: '0', transform: 'translateY(-100%)' },
-    { opacity: '1', transform: 'translateY(0)' },
-  ],
-  { duration: 500 }
-);
-
-const DROP_UP_KEY_FRAMES = new KeyframeEffect(
-  MENU_LIST,
-  [
-    { opacity: '1', transform: 'translateY(0)' },
-    { opacity: '0', transform: 'translateY(-100%)' },
-  ],
-  { duration: 500 }
-);
-
-const DROP_DOWN_ANIMATION = new Animation(
-  DROP_DOWN_KEYFRAMES,
-  document.timeline
-);
-
-const DROP_UP_ANIMATION = new Animation(DROP_UP_KEY_FRAMES, document.timeline);
-
-const OPEN_KEY_FRAMES = new KeyframeEffect(
-  BURGER_MENU,
-  [{ transform: 'translateX(100%)' }, { transform: 'translateX(0)' }],
-  { duration: 500 }
-);
-
-const CLOSE_KEYFRAME = new KeyframeEffect(
-  BURGER_MENU,
-  [{ transform: 'translateX(0)' }, { transform: 'translateX(100%)' }],
-  { duration: 500 }
-);
-
-const OPEN_BURGER_ANIMATION = new Animation(OPEN_KEY_FRAMES, document.timeline);
-
-const CLOSE_BURGER_ANIMATION = new Animation(CLOSE_KEYFRAME, document.timeline);
-
-function handleMenuClick() {
-  if (MENU_LIST.classList.contains('visually-hidden')) {
-    DROP_DOWN_ANIMATION.play();
-    MENU_LIST.classList.remove('visually-hidden');
-    return;
-  }
-  DROP_UP_ANIMATION.play();
-  setTimeout(() => {
-    MENU_LIST.classList.add('visually-hidden');
-  }, 500);
-}
-
-function handleBurgerClick() {
-  BURGER_MENU.classList.add('is-open-header');
-  OPEN_BURGER_ANIMATION.play();
-  document.body.style.overflow = 'hidden';
-}
-
-function handleCloseClick() {
-  CLOSE_BURGER_ANIMATION.play();
-  setTimeout(() => {
-    BURGER_MENU.classList.remove('is-open-header');
-  }, 500);
-  document.body.style.overflow = '';
-}
-
-// варіант 2
-
-// const MENU_LIST = document.querySelector('.header-menu-list');
-// const BURGER_BTN = document.querySelector('.header-burger-btn');
-// const BURGER_MENU = document.querySelector('.header-burger-menu');
-// const CLOSE_BTN = document.querySelector('.header-close-btn');
-// const BURGER_MENU_LIST = document.querySelector('.header-burger-menu-list');
-// const BACKDROP = document.getElementById('burger-backdrop');
-
-// BURGER_BTN.addEventListener('click', handleBurgerClick);
-// CLOSE_BTN.addEventListener('click', handleCloseClick);
-// MENU_LIST.addEventListener('click', handleMenuClick);
-// BURGER_MENU_LIST.addEventListener('click', handleCloseClick);
-
-// document.body.addEventListener('click', event => {
-//   if (
-//     !MENU_LIST.classList.contains('visually-hidden') &&
-//     !event.target.classList.contains('header-menu-link')
-//   ) {
-//     handleMenuClick();
-//   }
-// });
-
-// document.addEventListener('keydown', event => {
-//   if (
-//     event.key === 'Escape' &&
-//     !MENU_LIST.classList.contains('visually-hidden')
-//   ) {
-//     handleMenuClick();
-//   }
-// });
-
-// const DROP_DOWN_KEYFRAMES = new KeyframeEffect(
-//   MENU_LIST,
-//   [
-//     { opacity: '0', transform: 'translateY(-100%)' },
-//     { opacity: '1', transform: 'translateY(0)' },
-//   ],
-//   { duration: 500 }
-// );
-
-// const DROP_UP_KEY_FRAMES = new KeyframeEffect(
-//   MENU_LIST,
-//   [
-//     { opacity: '1', transform: 'translateY(0)' },
-//     { opacity: '0', transform: 'translateY(-100%)' },
-//   ],
-//   { duration: 500 }
-// );
-
-// const DROP_DOWN_ANIMATION = new Animation(
-//   DROP_DOWN_KEYFRAMES,
-//   document.timeline
-// );
-
-// const DROP_UP_ANIMATION = new Animation(DROP_UP_KEY_FRAMES, document.timeline);
-
-// const OPEN_KEY_FRAMES = new KeyframeEffect(
-//   BURGER_MENU,
-//   [{ transform: 'translateX(100%)' }, { transform: 'translateX(0)' }],
-//   { duration: 500 }
-// );
-
-// const CLOSE_KEYFRAME = new KeyframeEffect(
-//   BURGER_MENU,
-//   [{ transform: 'translateX(0)' }, { transform: 'translateX(100%)' }],
-//   { duration: 500 }
-// );
-
-// const OPEN_BURGER_ANIMATION = new Animation(OPEN_KEY_FRAMES, document.timeline);
-
-// const CLOSE_BURGER_ANIMATION = new Animation(CLOSE_KEYFRAME, document.timeline);
-
-// function handleMenuClick() {
-//   if (MENU_LIST.classList.contains('visually-hidden')) {
-//     DROP_DOWN_ANIMATION.play();
-//     MENU_LIST.classList.remove('visually-hidden');
-//     return;
-//   }
-//   DROP_UP_ANIMATION.play();
-//   setTimeout(() => {
-//     MENU_LIST.classList.add('visually-hidden');
-//   }, 500);
-// }
-
-// function handleBurgerClick() {
-//   BACKDROP.classList.add('active');
-//   BURGER_MENU.classList.add('is-open-header');
-//   OPEN_BURGER_ANIMATION.play();
-//   document.body.style.overflow = 'hidden';
-// }
-
-// function handleCloseClick() {
-//   CLOSE_BURGER_ANIMATION.play();
-//   BACKDROP.classList.remove('active');
-//   setTimeout(() => {
-//     BURGER_MENU.classList.remove('is-open-header');
-//   }, 500);
-//   document.body.style.overflow = '';
-// }
-
-// варіант 3
-
-// const MENU_LIST = document.querySelector('.header-menu-list');
-// const BURGER_BTN = document.querySelector('.header-burger-btn');
-// const BURGER_MENU = document.querySelector('.header-burger-menu');
-// const CLOSE_BTN = document.querySelector('.header-close-btn');
-// const BURGER_MENU_LIST = document.querySelector('.header-burger-menu-list');
-// const BACKDROP = document.getElementById('burger-backdrop');
-
-// // Елемент, який потрібно блюрити
-// const PAGE_CONTENT = document.querySelector('.page-content'); // Контент сторінки
-
-// BURGER_BTN.addEventListener('click', handleBurgerClick);
-// CLOSE_BTN.addEventListener('click', handleCloseClick);
-// MENU_LIST.addEventListener('click', handleMenuClick);
-// BURGER_MENU_LIST.addEventListener('click', handleCloseClick);
-
-// document.body.addEventListener('click', event => {
-//   if (
-//     !MENU_LIST.classList.contains('visually-hidden') &&
-//     !event.target.classList.contains('header-menu-link')
-//   ) {
-//     handleMenuClick();
-//   }
-// });
-
-// document.addEventListener('keydown', event => {
-//   if (event.key === 'Escape' && BACKDROP.classList.contains('active')) {
-//     handleCloseClick();
-//   }
-// });
-
-// // Анімації для меню
-// const DROP_DOWN_KEYFRAMES = new KeyframeEffect(
-//   MENU_LIST,
-//   [
-//     { opacity: '0', transform: 'translateY(-100%)' },
-//     { opacity: '1', transform: 'translateY(0)' },
-//   ],
-//   { duration: 500 }
-// );
-
-// const DROP_UP_KEYFRAMES = new KeyframeEffect(
-//   MENU_LIST,
-//   [
-//     { opacity: '1', transform: 'translateY(0)' },
-//     { opacity: '0', transform: 'translateY(-100%)' },
-//   ],
-//   { duration: 500 }
-// );
-
-// const DROP_DOWN_ANIMATION = new Animation(
-//   DROP_DOWN_KEYFRAMES,
-//   document.timeline
-// );
-
-// const DROP_UP_ANIMATION = new Animation(DROP_UP_KEYFRAMES, document.timeline);
-
-// const OPEN_KEYFRAMES = new KeyframeEffect(
-//   BURGER_MENU,
-//   [{ transform: 'translateX(100%)' }, { transform: 'translateX(0)' }],
-//   { duration: 500 }
-// );
-
-// const CLOSE_KEYFRAMES = new KeyframeEffect(
-//   BURGER_MENU,
-//   [{ transform: 'translateX(0)' }, { transform: 'translateX(100%)' }],
-//   { duration: 500 }
-// );
-
-// const OPEN_BURGER_ANIMATION = new Animation(OPEN_KEYFRAMES, document.timeline);
-
-// const CLOSE_BURGER_ANIMATION = new Animation(
-//   CLOSE_KEYFRAMES,
-//   document.timeline
-// );
-
-// function handleMenuClick() {
-//   if (MENU_LIST.classList.contains('visually-hidden')) {
-//     DROP_DOWN_ANIMATION.play();
-//     MENU_LIST.classList.remove('visually-hidden');
-//     return;
-//   }
-//   DROP_UP_ANIMATION.play();
-//   setTimeout(() => {
-//     MENU_LIST.classList.add('visually-hidden');
-//   }, 500);
-// }
-
-// function handleBurgerClick() {
-//   BACKDROP.classList.add('active'); // Показуємо бекдроп
-//   PAGE_CONTENT.classList.add('blurred'); // Додаємо блюр для контенту
-//   BURGER_MENU.classList.add('is-open-header');
-//   OPEN_BURGER_ANIMATION.play();
-//   document.body.style.overflow = 'hidden'; // Блокуємо скрол сторінки
-// }
-
-// function handleCloseClick() {
-//   CLOSE_BURGER_ANIMATION.play();
-//   BACKDROP.classList.remove('active'); // Ховаємо бекдроп
-//   PAGE_CONTENT.classList.remove('blurred'); // Знімаємо блюр
-//   setTimeout(() => {
-//     BURGER_MENU.classList.remove('is-open-header');
-//   }, 500);
-//   document.body.style.overflow = ''; // Відновлюємо скрол сторінки
-// }
